@@ -1,0 +1,88 @@
+<app-header title="{{ title }}"></app-header>
+
+<div *ngIf="!planet" class="spinner-container">
+  <div class="spinner-border text-primary"></div>
+</div>
+
+<div id="planet" class="container-fluid h-100" *ngIf="planet">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-6">
+      <div class="shadow-md card card-body mb-5">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4"><strong>Name:</strong></div>
+                <div class="col-sm-8">{{ planet.name }}</div>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4"><strong>Rotation Period:</strong></div>
+                <div class="col-sm-8">{{ planet.rotation_period }}</div>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4"><strong>Orbital Period:</strong></div>
+                <div class="col-sm-8">{{ planet.orbital_period }}</div>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4"><strong>Diameter:</strong></div>
+                <div class="col-sm-8">{{ planet.diameter }}</div>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4"><strong>Climate:</strong></div>
+                <div class="col-sm-8">{{ planet.climate }}</div>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4"><strong>Gravity:</strong></div>
+                <div class="col-sm-8">{{ planet.gravity }}</div>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4"><strong>Terrain:</strong></div>
+                <div class="col-sm-8">{{ planet.terrain }}</div>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4"><strong>Surface Water:</strong></div>
+                <div class="col-sm-8">{{ planet.surface_water }}</div>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4"><strong>Population:</strong></div>
+                <div class="col-sm-8">{{ planet.population }}</div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

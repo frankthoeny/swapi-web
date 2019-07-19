@@ -1,0 +1,21 @@
+<nav class="navbar navbar-sw navbar-expand-lg navbar-dark bg-dark">
+  <div *ngIf="!showBackLink()" class="text-center col-md-12">
+    <button (click)="swapiSetLocalStorage()" class="btn btn-danger float-right" aria-label="back">
+      Enable Offline
+    </button>
+    <h1>{{ title }}</h1>
+  </div>
+
+  <div *ngIf="showBackLink()" class="col-5">
+    <button
+      (click)="goBack()"
+      class="btn btn-outline-primary"
+      aria-label="back"
+    >
+      <span class="oi oi-chevron-left"></span> Back
+    </button>
+  </div>
+  <div *ngIf="showBackLink()" class="col-7">
+    <h1>{{ title }}</h1>
+  </div>
+</nav>

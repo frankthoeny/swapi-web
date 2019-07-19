@@ -1,0 +1,49 @@
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3"><strong>Name:</strong></div>
+        <div class="col-sm-9">{{ name }}</div>
+      </div>
+    </div>
+  </li>
+  <li class="list-group-item">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3"><strong>Year of Birth:</strong></div>
+        <div class="col-sm-9">{{ birth_year }}</div>
+      </div>
+    </div>
+  </li>
+  <li class="list-group-item">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3"><strong>Gender:</strong></div>
+        <div class="col-sm-9">{{ gender }}</div>
+      </div>
+    </div>
+  </li>
+  <li class="list-group-item">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3"><strong>Height:</strong></div>
+        <div class="col-sm-9">{{ height }}</div>
+      </div>
+    </div>
+  </li>
+  <li class="list-group-item">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3"><strong>Mass:</strong></div>
+        <div class="col-sm-9">{{ mass }}</div>
+      </div>
+    </div>
+  </li>
+  <li class="list-group-item">
+    <div class="container">
+      <div class="row">  
+        <a routerLink="/planets/{{ planet }}">Home Planet</a>
+      </div>
+    </div>
+  </li>
+</ul>

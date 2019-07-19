@@ -1,0 +1,13 @@
+#people {    
+    overflow-y: scroll;
+    .list-scroll-container {
+        opacity: 0.8;
+    }
+    .list-group {
+        height: 510px;
+        overflow-y: scroll;
+    }
+    .card-body {
+        z-index: 100;
+    }
+}

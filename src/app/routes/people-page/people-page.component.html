@@ -1,0 +1,57 @@
+<app-header title="{{ title }}"></app-header>
+
+<div *ngIf="filteredPeople.length === 0" class="spinner-container">
+  <div class="spinner-border text-primary"></div>
+</div>
+
+<div id="people" class="container-fluid h-100" *ngIf="filteredPeople">
+  <div id="peopleListContainer" class="row">
+    <div class="col-sm-12 col-md-4">
+      <input
+        type="text"
+        class="col-12 form-control input-lg"
+        placeholder="Search"
+        [(ngModel)]="searchValue"
+      />
+      <div id="characterList" class="list-scroll-container w-100 position-relative">
+        <div class="list-group w-100 position-absolute">
+          <a
+            (click)="activateClass(i)"
+            *ngFor="let person of filteredPeople; let i = index"
+            class="list-group-item list-group-item-action list-group-item-primary"
+            [class.active]="selectedIndex === i"
+            data-toggle="collapse"
+            href="#collapse-{{ person.name | lowercase | dash }}"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapse"
+            >{{ person.name }}</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="accordion-group col-sm-12 col-md-6">        
+      <div
+        *ngFor="let person of filteredPeople"
+        class="collapse"
+        id="collapse-{{ person.name | lowercase | dash }}"
+        data-parent="#peopleListContainer"
+      >         
+        <div class="shadow-md card card-body"> 
+            <a class="close float-right" href="#collapse-{{ person.name | lowercase | dash }}" data-toggle="collapse" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </a>         
+          <app-person
+            name="{{ person.name }}"
+            birth_year="{{ person.birth_year }}"
+            gender="{{ person.gender }}"
+            height="{{ person.height }}"
+            mass="{{ person.mass }}"
+            homeworld="{{ person.homeworld }}"
+          ></app-person>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
