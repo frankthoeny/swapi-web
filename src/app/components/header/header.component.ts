@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
 
   public swapiSetLocalStorage(): void {
     this.starWarsCharacters = this.swapiService.people;
-    this.swapiService.set('STARWARS-CHARACTERS', this.starWarsCharacters);
+    this.swapiService.setLocal('STARWARS-CHARACTERS', this.starWarsCharacters);
   }
 
 }

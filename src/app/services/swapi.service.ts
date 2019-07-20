@@ -39,7 +39,7 @@ export class SwapiService {
   }
 
   public starWarsPeople(): void {
-    if (this.people.length === 0 || localStorage.length === 0) {
+    if (this.people.length === 0 && navigator.onLine) {
       this.getPeople(this.peopleUrl)
         .pipe(
           expand(response =>
@@ -49,8 +49,14 @@ export class SwapiService {
         .subscribe(data => {
           this.people.push(...data.results);
         });
-    } else if (localStorage) {
-      this.people = this.get('STARWARS-CHARACTERS');
+      } else {
+        this.localStarWarsCharacters();
+      }
+  }
+
+  public localStarWarsCharacters(): void {
+    if (localStorage.length > 0) {
+      this.people = this.getLocal('STARWARS-CHARACTERS');
     }
   }
 
@@ -63,7 +69,7 @@ export class SwapiService {
     );
   }
 
-  public set(key: string, data: any): void {
+  public setLocal(key: string, data: any): void {
     try {
       localStorage.setItem(key, JSON.stringify(data));
     } catch (e) {
@@ -71,7 +77,7 @@ export class SwapiService {
     }
   }
 
-  public get(key: string): any {
+  public getLocal(key: string): any {
     try {
       return JSON.parse(localStorage.getItem(key));
     } catch (e) {
