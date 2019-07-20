@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Demo
 
-[Run Demo](https://frankthoeny.github.io/swapi-web/people)
+[Run Demo](https://frankthoeny.github.io/swapi-web)
 
 ## Development server
 
