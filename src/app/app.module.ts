@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { PeoplePageComponent } from './routes/people-page/people-page.component';
 import { PlanetPageComponent } from './routes/planet-page/planet-page.component';
 import { PersonComponent } from './components/person/person.component';
-import { DashPipe } from './pipes/dash.pipe';
 import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
@@ -16,11 +15,15 @@ import { HeaderComponent } from './components/header/header.component';
     PeoplePageComponent,
     PlanetPageComponent,
     PersonComponent,
-    DashPipe,
     HeaderComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
